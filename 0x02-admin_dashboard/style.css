@@ -46,8 +46,11 @@ body {
   position: relative;
   width: 100%;
   list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
-.navigation ul li:hover {
+.navigation ul li:hover,
+.navigation ul li.hovered {
   background-color: var(--white);
 }
 .navigation ul li:nth-child(1) {
@@ -63,7 +66,8 @@ body {
   text-decoration: none;
   color: var(--white);
 }
-.navigation ul li:hover a {
+.navigation ul li:hover a,
+.navigation ul li.hovered a {
   color: var(--blue);
 }
 .navigation ul li a .icon {
@@ -71,7 +75,49 @@ body {
   display: block;
   min-width: 60px;
   height: 60px;
-  line-height: 60px;
+  line-height: 65px;
   border: 1px solid red;
   text-align: center;
+}
+.navigation ul li a .icon ico-icon {
+  font-size: 1.75rem;
+}
+.navigation ul li a .title {
+  position: relative;
+  display: block;
+  border: 1px solid white;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+/* ======= curve outside ========= */
+
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
 }
