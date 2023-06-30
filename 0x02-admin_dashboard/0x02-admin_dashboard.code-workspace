@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"name": "0x02-admin_dashboard",
+		"path": "."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "0x02-admin_dashboard"
+  }
+}
